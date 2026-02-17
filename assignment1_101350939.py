@@ -7,21 +7,25 @@ gym_member = "Klei Mehilli"
 preferred_weight_kg = 20.5
 highest_reps = 25
 membership_active = True
+
 # Step c: Create a dictionary named workout_stats
 workout_stats = {
     "Alex": (35, 42, 20),
     "Bob": (23, 51, 37),
     "Klei": (48, 35, 60)
 }
+
 # Step d: Calculate total workout minutes using a loop and add to dictionary
 for friend in list(workout_stats.keys()):
     if not friend.endswith("_Total"):
         total_minutes = sum(workout_stats[friend])
         workout_stats[f"{friend}_Total"] = total_minutes
+        
 # Step e: Create a 2D nested list called workout_list
 workout_list = []
 for friend in ["Alex", "Bob", "Klei"]:
     workout_list.append(list(workout_stats[friend]))
+    
 # Step f: Slice the workout_list
 yoga_running = [row[0:2] for row in workout_list]
 print("Yoga and Running minutes for all friends:")
